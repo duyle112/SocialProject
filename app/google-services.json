@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "463487393015",
+    "firebase_url": "https://howf-56d85.firebaseio.com",
+    "project_id": "howf-56d85",
+    "storage_bucket": "howf-56d85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463487393015:android:4ba978005a4b7a6b",
+        "android_client_info": {
+          "package_name": "com.english.howf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463487393015-9a8t3n53nfsqigok5n9pu679s42n5vln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.english.howf",
+            "certificate_hash": "C7C1E3CF0FCB7434E4C382EDC875F7F210DE7A6D"
+          }
+        },
+        {
+          "client_id": "463487393015-gfgmtd4v0v9c350au57s2n1m5al5grb7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ-_gWZJ_h3ejn162BJ2bzg9-zbaKkF2Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463487393015-gfgmtd4v0v9c350au57s2n1m5al5grb7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
