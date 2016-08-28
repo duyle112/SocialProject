@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -44,9 +46,9 @@ public class NavigationDrawer extends Fragment {
         {
             fromsavedInstance=true;
         }
-        Items items1=new Items("Inbox",R.drawable.username);
-        Items items2=new Items("Inbox",R.drawable.username);
-        Items items3=new Items("Inbox",R.drawable.username);
+        Items items1=new Items("UpdateInfo",R.drawable.update);
+        Items items2=new Items("Find Friend",R.drawable.find);
+        Items items3=new Items("My Friend",R.drawable.user);
         Items items4=new Items("Inbox",R.drawable.username);
         Items items5=new Items("Inbox",R.drawable.username);
         Items items6=new Items("Inbox",R.drawable.username);
@@ -77,7 +79,34 @@ public class NavigationDrawer extends Fragment {
          txtname=(TextView)view.findViewById(R.id.txtname);
          txtemail=(TextView)view.findViewById(R.id.txtemail);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                displayFragment(position);
+            }
+        });
         return view;
+    }
+    public  void displayFragment(int position)
+    {
+        Fragment fragment=null;
+        switch (position)
+        {
+            case 0:
+                fragment=new UpdateFragment();
+                break;
+            case 1:
+                fragment=new FindfriendFragment();
+                break;
+            case 2:
+                fragment=new MyFriendFragment();
+                break;
+        }
+        if(fragment!=null)
+        {
+            FragmentManager fragmentManager=getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.frame_container,fragment).commit();
+        }
     }
 
     public void setup(int fragmentid, final DrawerLayout drawerLayout, Toolbar toolbar)
