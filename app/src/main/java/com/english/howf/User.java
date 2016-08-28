@@ -7,15 +7,19 @@ public class User  {
     private String uid;
     private String email;
     private String[] friendsId;
+    private String[] request;
     private String gender;
     private String birthday;
+    private String location;
 
-    public User(String uid, String email, String[] friendsId, String gender, String birthday) {
+    public User(String uid, String email, String[] friendsId, String gender, String birthday,String [] request,String location) {
         this.uid = uid;
         this.email = email;
         this.friendsId = friendsId;
         this.gender = gender;
         this.birthday = birthday;
+        this.request=request;
+        this.location=location;
     }
 
     public String getUid() {
@@ -56,5 +60,20 @@ public class User  {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    public String[] getRequest() {
+        return request;
+    }
+
+    public void setRequest(String[] request) {
+        this.request = request;
+    }
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }
