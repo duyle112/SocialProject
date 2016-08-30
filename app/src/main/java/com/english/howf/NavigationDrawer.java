@@ -67,7 +67,13 @@ public class NavigationDrawer extends Fragment {
         this.email=email;
         txtname.setText(this.name+"");
         txtemail.setText(this.email+"");
-        Log.i("info",name);
+        //Log.i("info",name);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                displayFragment(position);
+            }
+        });
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,12 +85,7 @@ public class NavigationDrawer extends Fragment {
          txtname=(TextView)view.findViewById(R.id.txtname);
          txtemail=(TextView)view.findViewById(R.id.txtemail);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                displayFragment(position);
-            }
-        });
+
         return view;
     }
     public  void displayFragment(int position)
@@ -94,6 +95,9 @@ public class NavigationDrawer extends Fragment {
         {
             case 0:
                 fragment=new UpdateFragment();
+                Bundle bundle=new Bundle();
+                bundle.putString("uid",name);
+                fragment.setArguments(bundle);
                 break;
             case 1:
                 fragment=new FindfriendFragment();

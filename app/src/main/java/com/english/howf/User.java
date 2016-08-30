@@ -11,8 +11,13 @@ public class User  {
     private String gender;
     private String birthday;
     private String location;
+    private String name;
 
-    public User(String uid, String email, String[] friendsId, String gender, String birthday,String [] request,String location) {
+    public User() {
+
+    }
+
+    public User(String uid, String email, String[] friendsId, String gender, String birthday, String [] request, String location) {
         this.uid = uid;
         this.email = email;
         this.friendsId = friendsId;
@@ -75,5 +80,13 @@ public class User  {
 
     public String getLocation() {
         return location;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -61,6 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         txtsignup_=(TextView)findViewById(R.id.txtsignup);
         edtusername_=(EditText)findViewById(R.id.edtusername);
         edtpassword_=(EditText)findViewById(R.id.edtpassword);
+
         btnlogin_.setOnClickListener(this);
         txtsignup_.setOnClickListener(this);
         edtpassword_.setInputType(InputType.TYPE_CLASS_TEXT |
