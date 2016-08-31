@@ -5,6 +5,7 @@ package com.english.howf;
  */
 public class User  {
     private String uid;
+    private String name;
     private String email;
     private String[] friendsId;
     private String[] request;
@@ -12,8 +13,9 @@ public class User  {
     private String birthday;
     private String location;
 
-    public User(String uid, String email, String[] friendsId, String gender, String birthday,String [] request,String location) {
+    public User(String uid, String name, String email, String[] friendsId, String gender, String birthday,String [] request,String location) {
         this.uid = uid;
+        this.name = name;
         this.email = email;
         this.friendsId = friendsId;
         this.gender = gender;
@@ -28,6 +30,14 @@ public class User  {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
